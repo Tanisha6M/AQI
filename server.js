@@ -17,6 +17,7 @@ const getAQI = (gas) =>
   gas < 300 ? 'SAFE' : gas < 700 ? 'MODERATE' : 'DANGEROUS';
 
 app.post('/api/data', (req, res) => {
+  console.log('Received:', req.body);
   const data = {
     ...req.body,
     timestamp: new Date().toISOString(),
